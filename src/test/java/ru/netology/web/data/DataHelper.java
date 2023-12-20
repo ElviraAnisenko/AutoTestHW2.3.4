@@ -2,6 +2,7 @@ package ru.netology.web.data;
 
 import lombok.Value;
 import ru.netology.web.page.DashboardPage;
+import ru.netology.web.test.MoneyTransferTest;
 
 import java.util.Random;
 import java.lang.Math;
@@ -49,18 +50,14 @@ public class DataHelper {
         return secondCard;
     }
 
-    public static double generateValidAmount(UserCard userCard) {
-        DashboardPage dashboard=new DashboardPage();
-         int balance=dashboard.getCardBalance(userCard);
+    public static int generateValidAmount(int balance) {
          balance=Math.abs((balance));
          int [] validAmounts= new int [] {balance,balance-1,1};
          int validAmount=validAmounts[new Random().nextInt(validAmounts.length)-1];
          return validAmount;
     }
 
-    public static double generateInValidAmount(UserCard userCard) {
-        DashboardPage dashboard=new DashboardPage();
-        int balance=dashboard.getCardBalance(userCard);
+    public static int generateInValidAmount(int balance) {
         balance=Math.abs((balance));
         int [] inValidAmounts= new int []{balance+1,0,-1};
         int inValidAmount=inValidAmounts[new Random().nextInt(inValidAmounts.length)-1];

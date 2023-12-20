@@ -34,9 +34,9 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void shouldTransferMoneyFromFirstCardToSecondWithValidData() {
+    void shouldTransferMoneyToFirstCardFromSecondWithValidData() {
         var transferMoney = dashboard.choiceCardForAddMoney(firstCard);
-        int validAmount = (int) DataHelper.generateValidAmount(secondCard);
+        int validAmount = DataHelper.generateValidAmount(currentBalanceSecondCard);
         transferMoney.validOperationAddAmountToCard(validAmount, secondCard);
         var expectedBalanceFirstCard = currentBalanceFirstCard + validAmount;
         var expectedBalanceSecondCard = currentBalanceSecondCard - validAmount;
