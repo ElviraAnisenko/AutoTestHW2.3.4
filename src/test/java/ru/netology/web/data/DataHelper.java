@@ -59,7 +59,7 @@ public class DataHelper {
 
     public static int generateInValidAmount(int balance) {
         balance=Math.abs((balance));
-        int [] inValidAmounts= new int [] {balance+1,0,-1};
+        int [] inValidAmounts= new int [] {balance+1,0};
         int inValidAmount=inValidAmounts[new Random().nextInt(inValidAmounts.length)-1];
         return inValidAmount;
     }

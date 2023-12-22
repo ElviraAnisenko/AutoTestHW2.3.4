@@ -53,7 +53,7 @@ public class MoneyTransferTest {
     void shouldNotTransferMoneyToFirstCardFromSecondWithInValidData() {
         var transferMoney = dashboard.choiceCardForAddMoney(firstCard);
         int inValidAmount = (int) DataHelper.generateInValidAmount(currentBalanceSecondCard);
-        transferMoney.inValidOperationAddAmountToCard(inValidAmount, secondCard, "Выполнена попытка перевода суммы, превышающей баланс карты.");
+        transferMoney.inValidOperationAddAmountToCard(inValidAmount, secondCard, "Выполнена попытка перевода суммы, равной нулю или превышающей баланс карты.");
         var expectedBalanceFirstCard = currentBalanceFirstCard;
         var expectedBalanceSecondCard = currentBalanceSecondCard;
         var actualBalanceFirstCard = dashboard.getCardBalance(firstCard);
