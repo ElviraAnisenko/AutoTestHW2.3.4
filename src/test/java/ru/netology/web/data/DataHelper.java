@@ -51,17 +51,11 @@ public class DataHelper {
     }
 
     public static int generateValidAmount(int balance) {
-         balance=Math.abs((balance));
-         int [] validAmounts= new int [] {balance,balance-1,1};
-         int validAmount=validAmounts[new Random().nextInt(validAmounts.length)-1];
-         return validAmount;
+        return new  Random().nextInt(Math.abs(balance))+1;
     }
 
     public static int generateInValidAmount(int balance) {
-        balance=Math.abs((balance));
-        int [] inValidAmounts= new int [] {balance+1,0};
-        int inValidAmount=inValidAmounts[new Random().nextInt(inValidAmounts.length)-1];
-        return inValidAmount;
+        return Math.abs(balance)+ new  Random().nextInt(10000);
     }
 
-    }
+}
