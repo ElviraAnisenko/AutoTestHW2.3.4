@@ -31,7 +31,7 @@ public TransferMoneyPage() {
 
     }
 
-    public void InValidOperationAddAmountToCard (int inValidAmount , DataHelper.UserCard userCard, String textError) {
+    public void inValidOperationAddAmountToCard (int inValidAmount , DataHelper.UserCard userCard, String textError) {
         fieldAmount.setValue(String.valueOf(inValidAmount));
         fromCard.setValue(userCard.getNumber());
         button.click();
