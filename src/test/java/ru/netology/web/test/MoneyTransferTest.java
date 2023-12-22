@@ -49,20 +49,18 @@ public class MoneyTransferTest {
                 () -> assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard));
     }
 
-//    @Test
-//    void shouldNotTransferMoneyToFirstCardFromSecondWithInValidData() {
-//        var transferMoney = dashboard.choiceCardForAddMoney(firstCard);
-//        int inValidAmount = (int) DataHelper.generateInValidAmount(currentBalanceSecondCard);
-//        transferMoney.inValidOperationAddAmountToCard(inValidAmount, secondCard, "Выполнена попытка перевода суммы, превышающей баланс карты.");
-//        var expectedBalanceFirstCard = currentBalanceFirstCard;
-//        var expectedBalanceSecondCard = currentBalanceSecondCard;
-//        var actualBalanceFirstCard = dashboard.getCardBalance(firstCard);
-//        var actualBalanceSecondCard = dashboard.getCardBalance(secondCard);
-//        assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard);
-//        assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
-//        assertAll(() -> assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard),
-//                () -> assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard));
-//    }
+    @Test
+    void shouldNotTransferMoneyToFirstCardFromSecondWithInValidData() {
+        var transferMoney = dashboard.choiceCardForAddMoney(firstCard);
+        int inValidAmount = (int) DataHelper.generateInValidAmount(currentBalanceSecondCard);
+        transferMoney.inValidOperationAddAmountToCard(inValidAmount, secondCard, "Выполнена попытка перевода суммы, превышающей баланс карты.");
+        var expectedBalanceFirstCard = currentBalanceFirstCard;
+        var expectedBalanceSecondCard = currentBalanceSecondCard;
+        var actualBalanceFirstCard = dashboard.getCardBalance(firstCard);
+        var actualBalanceSecondCard = dashboard.getCardBalance(secondCard);
+        assertAll(() -> assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard),
+                () -> assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard));
+    }
 
 }
 
